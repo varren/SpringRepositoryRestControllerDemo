@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+security:
+  ignored: /**
+
+
+spring:
+  datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:./data/test;MV_STORE=FALSE;MVCC=true
+    username: username
+    password: password
+  jpa:
+   database-platform: org.hibernate.dialect.H2Dialect
+   show-sql: true
+   hibernate:
+     naming:
+       implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+       physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+     ddl-auto: update
+
+  data:
+   rest:
+     base-path: /api/v1
